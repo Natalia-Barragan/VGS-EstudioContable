@@ -6,7 +6,7 @@ import Image from "next/image"
 
 const socialLinks = [
   // { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Instagram, href: "https://www.instagram.com/estudiocontable_vgs?igsh=NmRlOWx4d3dwZ3B1", label: "Instagram" },
   // { icon: Twitter, href: "#", label: "Twitter" },
 ]
 
@@ -36,10 +36,12 @@ export function Footer() {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-taupe hover:text-navy transition-all duration-200"
                 aria-label={social.label}
               >
-                <social.icon className="w-7 h-7" />
+                <social.icon className="w-6 h-6" />
               </a>
             ))}
             <span className="text-white/70 text-sm -ml-2">SEGUINOS EN INSTAGRAM</span>
