@@ -96,7 +96,7 @@ export function ContactSection() {
                 <Input
                   id="name"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Nombre Apellido"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="h-12 rounded-lg border-border/50 focus:border-taupe focus:ring-taupe/20"
