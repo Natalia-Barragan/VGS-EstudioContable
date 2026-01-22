@@ -202,14 +202,59 @@ export function ContactSection() {
               </p>
 
               {/* Calendly Placeholder */}
-              <div className="flex-1 bg-background rounded-xl border-2 border-dashed border-border/50 flex flex-col items-center justify-center p-8 min-h-[240px]">
-                <Calendar className="w-12 h-12 text-muted-foreground/40 mb-4" />
-                <p className="text-sm text-muted-foreground text-center">
-                  Calendario de reservas
-                </p>
-                <p className="text-xs text-muted-foreground/60 text-center mt-1">
-                  (PROXIMAMENTE)
-                </p>
+              <div className="flex-1 bg-white rounded-xl shadow-sm border border-border/50 overflow-hidden flex flex-col min-h-[240px]">
+                {/* Calendar Header Mockup */}
+                <div className="bg-white p-4 border-b border-border/50 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-semibold text-navy">Enero 2026</span>
+                  </div>
+                  <div className="flex gap-1">
+                    <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                    <div className="w-2 h-2 rounded-full bg-green-400"></div>
+                  </div>
+                </div>
+
+                {/* Calendar Grid Mockup */}
+                <div className="p-4 flex-1">
+                  <div className="grid grid-cols-7 gap-2 text-center mb-2">
+                    {['D', 'L', 'M', 'M', 'J', 'V', 'S'].map((day) => (
+                      <div key={day} className="text-[10px] text-muted-foreground font-medium">
+                        {day}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="grid grid-cols-7 gap-2 text-center">
+                    {/* Empty slots for start of month */}
+                    <div className="h-6"></div>
+                    <div className="h-6"></div>
+                    <div className="h-6"></div>
+
+                    {/* Days */}
+                    {Array.from({ length: 31 }, (_, i) => i + 1).map((date) => (
+                      <div
+                        key={date}
+                        className={`h-6 flex items-center justify-center text-xs rounded-full ${date === 22
+                          ? 'bg-taupe text-white font-medium shadow-sm'
+                          : 'text-navy/70 hover:bg-secondary cursor-default'
+                          }`}
+                      >
+                        {date}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Mock Appointment Slots */}
+                  <div className="mt-4 space-y-2">
+                    <div className="h-8 bg-blue-50 border-l-2 border-blue-500 rounded-r-md p-1.5 flex flex-col justify-center">
+                      <div className="w-16 h-1.5 bg-blue-200 rounded-full mb-1"></div>
+                      <div className="w-10 h-1.5 bg-blue-100 rounded-full"></div>
+                    </div>
+                    <div className="h-8 bg-purple-50 border-l-2 border-purple-500 rounded-r-md p-1.5 flex flex-col justify-center opacity-60">
+                      <div className="w-20 h-1.5 bg-purple-200 rounded-full mb-1"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <Button
@@ -217,7 +262,7 @@ export function ContactSection() {
                 size="lg"
                 className="w-full mt-6 bg-taupe hover:bg-taupe-dark text-navy font-medium rounded-lg h-12 transition-all duration-200"
               >
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href={process.env.NEXT_PUBLIC_CALENDAR_LINK || "#"} target="_blank" rel="noopener noreferrer">
                   <Calendar className="w-4 h-4 mr-2" />
                   Seleccionar Horario
                 </a>
