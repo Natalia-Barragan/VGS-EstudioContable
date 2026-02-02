@@ -14,12 +14,12 @@ const services = [
   {
     icon: Calculator,
     title: "Impuestos",
-    description: "Liquidación y planificación tributaria para optimizar su carga fiscal de manera legal y eficiente.",
+    description: "Gestión integral y presentación de obligaciones tributarias nacionales, provinciales y municipales, asegurando el cumplimiento del calendario fiscal vigente.",
   },
   {
     icon: Users,
     title: "Sueldos",
-    description: "Gestión integral de nóminas, cargas sociales y cumplimiento de obligaciones laborales.",
+    description: "Liquidación de haberes, confección de recibos de sueldo y cargas sociales (F.931). Gestión de altas y bajas en ARCA y asesoramiento en convenios colectivos.",
   },
   {
     icon: MessageSquare,
@@ -29,12 +29,12 @@ const services = [
   {
     icon: FileCheck,
     title: "Certificaciones",
-    description: "Emisión de certificaciones contables y estados financieros con validez profesional.",
+    description: "Emisión de certificaciones con validez profesional (porque pueden ser contables, de ingresos, etc etc).",
   },
   {
     icon: Search,
-    title: "Auditorías",
-    description: "Auditoría de estados contables y revisión de procesos internos para mayor transparencia.",
+    title: "Contabilidad y Auditoría",
+    description: "Confección y auditoria de Estados Contables. Revisión y control de procesos internos para mayor transparencia.",
   },
   {
     icon: ClipboardList,

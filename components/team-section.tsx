@@ -49,7 +49,7 @@ export function TeamSection() {
         </motion.div>
 
         {/* Team Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-12 max-w-5xl mx-auto">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
@@ -57,7 +57,7 @@ export function TeamSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group"
+              className="group w-full max-w-md"
             >
               <div className="bg-secondary rounded-2xl p-6 lg:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-navy/5">
                 {/* Photo Placeholder */}
