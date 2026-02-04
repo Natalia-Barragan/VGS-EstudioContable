@@ -49,7 +49,7 @@ export function Footer() {
 
           {/* Copyright */}
           <p className="text-white/40 text-sm">
-            © 2026 VGS Estudio Contable. Creada por <a href="https://barragan-natalia-portfolio-vert-eight-97.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-taupe transition-colors">Natalia Barragan</a>.
+            © 2026 VGS Estudio Contable. Creada por <a href="https://nbdigital.lat/" target="_blank" rel="noopener noreferrer" className="hover:text-taupe transition-colors">NBDigital</a>.
           </p>
         </motion.div>
       </div>
