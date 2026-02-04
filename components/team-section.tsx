@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Linkedin, Mail } from "lucide-react"
+import { toast } from "sonner"
+import { Linkedin, Mail, Check } from "lucide-react"
 
 const team = [
   {
@@ -11,7 +12,7 @@ const team = [
     image: "/Victoria.jpeg",
     initials: "VG",
     linkedin: "https://www.linkedin.com/in/victoria-galello-a086a4139",
-    email: "mailto:estudiocontable.vgs@gmail.com",
+    email: "estudiocontable.vgs@gmail.com",
   },
   {
     name: "Gonzalo Serrano",
@@ -20,11 +21,24 @@ const team = [
     image: "/Gonzalo.jpeg",
     initials: "GS",
     linkedin: "https://www.linkedin.com/in/gonzalo-martin-serrano-4a0638182",
-    email: "mailto:estudiocontable.vgs@gmail.com",
+    email: "estudiocontable.vgs@gmail.com",
   },
 ]
 
 export function TeamSection() {
+  const handleCopyEmail = (email: string) => {
+    navigator.clipboard.writeText(email)
+    toast.success("¡Email copiado!", {
+      description: "El correo ha sido copiado al portapapeles.",
+      duration: 3000,
+      style: {
+        background: "#F8F6F4",
+        color: "#0F172A",
+        border: "1px solid #C5A086"
+      }
+    })
+  }
+
   return (
     <section id="nosotros" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 lg:px-12">
@@ -106,13 +120,13 @@ export function TeamSection() {
                       </a>
                     )}
                     {member.email && (
-                      <a
-                        href={member.email}
-                        className="w-9 h-9 rounded-full bg-navy/5 flex items-center justify-center text-navy/60 hover:bg-taupe hover:text-navy transition-all duration-200"
-                        aria-label={`Email de ${member.name}`}
+                      <button
+                        onClick={() => handleCopyEmail(member.email)}
+                        className="w-9 h-9 rounded-full bg-navy/5 flex items-center justify-center text-navy/60 hover:bg-taupe hover:text-navy transition-all duration-200 cursor-pointer"
+                        aria-label={`Copiar email de ${member.name}`}
                       >
                         <Mail className="w-4 h-4" />
-                      </a>
+                      </button>
                     )}
                   </div>
 

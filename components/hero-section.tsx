@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+import Link from "next/link"
+
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
@@ -15,7 +17,7 @@ export function HeroSection() {
         }} />
       </div>
 
-      <div className="container mx-auto px-10 lg:px-32 pt-24 pb-16">
+      <div className="container mx-auto px-10 lg:px-32 pt-24 pb-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <motion.div
@@ -66,6 +68,10 @@ export function HeroSection() {
                 asChild
                 size="lg"
                 className="bg-taupe hover:bg-taupe-dark text-navy font-medium rounded-full px-8 py-6 text-base transition-all duration-200 shadow-lg shadow-taupe/20"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 <a href="#contacto">
                   Agendar Reunión
@@ -77,6 +83,10 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 className="border-navy/20 text-navy hover:bg-navy hover:text-white rounded-full px-8 py-6 text-base transition-all duration-200 bg-transparent"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#servicios')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 <a href="#servicios">Ver Servicios</a>
               </Button>
