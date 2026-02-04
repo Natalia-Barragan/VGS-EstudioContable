@@ -29,7 +29,7 @@ const services = [
   {
     icon: FileCheck,
     title: "Certificaciones",
-    description: "Emisión de certificaciones con validez profesional (porque pueden ser contables, de ingresos, etc etc).",
+    description: "Emisión de certificaciones con validez profesional.",
   },
   {
     icon: Search,
