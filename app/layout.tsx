@@ -17,8 +17,9 @@ const inter = Inter({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  title: 'VGS Estudio Contable | ',
+export const metadata = {
+  metadataBase: new URL('https://estudiovgs.nbdigital.lat'), // Agregá esto
+  title: 'VGS Estudio Contable',
   description: 'Asesoramiento contable, impositivo y laboral.',
 }
 
