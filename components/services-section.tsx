@@ -39,7 +39,7 @@ const services = [
   {
     icon: ClipboardList,
     title: "Inscripciones",
-    description: "Tramitación de altas, bajas y modificaciones ante organismos fiscales y previsionales.",
+    description: "Altas, bajas y modificaciones ante organismos fiscales y previsionales, nacionales y provinciales.",
   },
 ]
 
